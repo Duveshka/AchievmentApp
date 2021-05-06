@@ -1,16 +1,14 @@
 using System.Collections.Generic;
+using API.Models;
 
-namespace API.Models
+namespace API.DTOs
 {
-    public class Achievment
+    public class AchievmentDTO
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public AchievmentType AchievmentType { get; set; }
         public string Description { get; set; }
-        public ICollection<File> Files { get; set; } = new List<File>();
-
-        public int UserId { get; set; }
-        public User User { get; set; }
+        public List<File> Files { get; set; }
     }
 }

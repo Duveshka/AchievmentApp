@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace API.Models
+namespace API.DTOs
 {
-    public class User
+    public class UserDetailDTO
     {
         public int Id { get; set; }
         public string Login { get; set; }
@@ -19,16 +19,9 @@ namespace API.Models
         public string About { get; set; }
         
 
-        public ICollection<Education> Educations { get; set; }
-        public ICollection<Achievment> Achievments { get; set; }
-        public ICollection<Work> Works { get; set; }
-        public City City { get; set; }
-        
-        public User(string Login, byte[] PasswordHash, byte[] PasswordSalt)
-        {
-            this.Login = Login;
-            this.PasswordHash = PasswordHash;
-            this.PasswordSalt = PasswordSalt;
-        }
+        public ICollection<EducationDTO> Educations { get; set; }
+        public ICollection<AchievmentDTO> Achievments { get; set; }
+        public ICollection<WorkDTO> Works { get; set; }
+        public CityDTO City { get; set; }
     }
 }
