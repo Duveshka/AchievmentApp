@@ -19,17 +19,29 @@ namespace API.Data
         }
         public async Task<Achievment> AddAchievment(int userId, AchievmentToAddAndEditDTO achievmentToAddDTO)
         {
-            throw new System.NotImplementedException();
+            var achievment = new Achievment(achievmentToAddDTO.Name, achievmentToAddDTO.AchievmentType, 
+                achievmentToAddDTO.Description, achievmentToAddDTO.Files, userId);
+
+            await _context.Achievment.AddAsync(achievment);
+            await _context.SaveChangesAsync();
+            return achievment; 
         }
 
-        public async void Delete<T>(T entity) where T : class
+        public void Delete<T>(T entity) where T : class
         {
-            throw new System.NotImplementedException();
+             _context.Remove(entity);
         }
 
-        public Achievment EditAchievment(int userId, int achievmentId, AchievmentToAddAndEditDTO achievmentToEditDTO)
+        public Achievment EditAchievment( int achievmentId, AchievmentToAddAndEditDTO achievmentToEditDTO)
         {
-            throw new System.NotImplementedException();
+            var editAchievment =  _context.Achievment.Find(achievmentId);
+
+            editAchievment.Name = achievmentToEditDTO.Name;
+            editAchievment.AchievmentType = achievmentToEditDTO.AchievmentType;
+            editAchievment.Description = achievmentToEditDTO.Description;
+            editAchievment.Files = achievmentToEditDTO.Files;
+
+            return editAchievment; 
         }
 
         public async Task<List<AchievmentDTO>> GetAchievments(int userId)

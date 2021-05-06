@@ -20,17 +20,31 @@ namespace API.Data
 
         public async Task<Work> AddWork(int userId, WorkDTO workDTO)
         {
-            throw new System.NotImplementedException();
+            var work = new Work(workDTO.Company, workDTO.Speciality, 
+                workDTO.StartDate, workDTO.FinishDate, workDTO.Description, userId);
+
+            await _context.Work.AddAsync(work);
+            await _context.SaveChangesAsync();
+            return work; 
         }
 
         public void Delete<T>(T entity) where T : class
         {
-            throw new System.NotImplementedException();
+            _context.Remove(entity);
         }
 
-        public Work EditWork(int userId, int workId, WorkDTO workDTO)
+        public Work EditWork(int workId, WorkDTO workDTO)
         {
-            throw new System.NotImplementedException();
+            var editWork =  _context.Work.Find(workId);
+
+            editWork.Company = workDTO.Company;
+            editWork.Speciality = workDTO.Speciality;
+            editWork.StartDate = workDTO.StartDate;
+            editWork.FinishDate = workDTO.FinishDate;
+            editWork.Description = workDTO.Description;
+            
+
+            return editWork; 
         }
 
         public async Task<List<WorkDTO>> GetWorks(int userId)

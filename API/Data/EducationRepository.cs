@@ -20,17 +20,29 @@ namespace API.Data
 
         public async Task<Education> AddEducation(int userId, EducationDTO educationDTO)
         {
-            throw new System.NotImplementedException();
+            var education = new Education(educationDTO.EducationName, educationDTO.Degree, 
+                educationDTO.Speciality, educationDTO.Graduated, userId);
+
+            await _context.Education.AddAsync(education);
+            await _context.SaveChangesAsync();
+            return education; 
         }
 
-        public async void Delete<T>(T entity) where T : class
+        public void Delete<T>(T entity) where T : class
         {
-            throw new System.NotImplementedException();
+            _context.Remove(entity);
         }
 
-        public Education EditEducation(int userId, int educationId, EducationDTO educationDTO)
+        public Education EditEducation(int educationId, EducationDTO educationDTO)
         {
-            throw new System.NotImplementedException();
+            var editEducation =  _context.Education.Find(educationId);
+
+            editEducation.EducationName = educationDTO.EducationName;
+            editEducation.Degree = educationDTO.Degree;
+            editEducation.Speciality = educationDTO.Speciality;
+            editEducation.Graduated = educationDTO.Graduated;
+
+            return editEducation; 
         }
 
         public async Task<List<EducationDTO>> GetEducations(int userId)

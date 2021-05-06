@@ -4,6 +4,15 @@ namespace API.Models
 {
     public class Achievment
     {
+        public Achievment(string name, AchievmentType achievmentType, string description, ICollection<File> files, int userId)
+        {
+            Name = name;
+            AchievmentType = achievmentType;
+            Description = description;
+            Files = files;
+            
+        }
+
         public int Id { get; set; }
         public string Name { get; set; }
         public AchievmentType AchievmentType { get; set; }
