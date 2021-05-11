@@ -54,5 +54,18 @@ namespace API.Data
             var worksToReturn = _mapper.Map<List<WorkDTO>>(works);
             return worksToReturn;
         }
+
+        public async Task<bool> SaveAll()
+        {
+            return await _context.SaveChangesAsync() > 0;
+        }
+
+        public async Task<WorkDTO> GetWork(int id)
+        {
+            var work = await _context.Work
+                .FirstOrDefaultAsync(p => p.Id == id);
+            var workToReturn = _mapper.Map<WorkDTO>(work);   
+            return workToReturn;
+        }
     }
 }

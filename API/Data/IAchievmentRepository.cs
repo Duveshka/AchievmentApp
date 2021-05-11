@@ -14,5 +14,6 @@ namespace API.Data
         Task<List<AchievmentDTO>> GetAchievmentsOfType(int userId, int typeId);
         Task<AchievmentDTO> GetAchievment(int id);
         Task<List<File>> GetFiles(int id);
+        Task<bool> SaveAll();
     }
 }

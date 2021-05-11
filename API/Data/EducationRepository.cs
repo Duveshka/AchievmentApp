@@ -52,5 +52,17 @@ namespace API.Data
             var educationsToReturn = _mapper.Map<List<EducationDTO>>(educations);
             return educationsToReturn;
         }
+
+        public async Task<bool> SaveAll()
+        {
+            return await _context.SaveChangesAsync() > 0;
+        }
+        public async Task<EducationDTO> GetEducation(int id)
+        {
+            var education = await _context.Education
+                .FirstOrDefaultAsync(p => p.Id == id);
+            var educationToReturn = _mapper.Map<EducationDTO>(education);   
+            return educationToReturn;
+        }
     }
 }

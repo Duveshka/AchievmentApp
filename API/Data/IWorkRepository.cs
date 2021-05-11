@@ -11,5 +11,7 @@ namespace API.Data
         Work EditWork(int workId, WorkDTO workDTO);
         void Delete<T>(T entity) where T: class;
         Task<List<WorkDTO>> GetWorks(int userId);
+        Task<bool> SaveAll();
+        Task<WorkDTO> GetWork(int id);
     }
 }

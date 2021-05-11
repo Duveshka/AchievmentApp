@@ -11,5 +11,7 @@ namespace API.Data
         Education EditEducation(int educationId, EducationDTO educationDTO);
         void Delete<T>(T entity) where T: class;
         Task<List<EducationDTO>> GetEducations(int userId);
+        Task<bool> SaveAll();
+        Task<EducationDTO> GetEducation(int id);
     }
 }

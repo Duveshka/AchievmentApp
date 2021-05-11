@@ -19,8 +19,8 @@ namespace API.Data
         }
         public async Task<Achievment> AddAchievment(int userId, AchievmentToAddAndEditDTO achievmentToAddDTO)
         {
-            var achievment = new Achievment(achievmentToAddDTO.Name, achievmentToAddDTO.AchievmentType, 
-                achievmentToAddDTO.Description, achievmentToAddDTO.Files, userId);
+            var achievment = new Achievment(achievmentToAddDTO.Name, achievmentToAddDTO.AchievmentTypeId, 
+                achievmentToAddDTO.Description, userId);
 
             await _context.Achievment.AddAsync(achievment);
             await _context.SaveChangesAsync();
@@ -37,7 +37,7 @@ namespace API.Data
             var editAchievment =  _context.Achievment.Find(achievmentId);
 
             editAchievment.Name = achievmentToEditDTO.Name;
-            editAchievment.AchievmentType = achievmentToEditDTO.AchievmentType;
+            editAchievment.AchievmentTypeId = achievmentToEditDTO.AchievmentTypeId;
             editAchievment.Description = achievmentToEditDTO.Description;
             editAchievment.Files = achievmentToEditDTO.Files;
 
@@ -99,6 +99,11 @@ namespace API.Data
                 files.Add(file);
             }
             return files;
+        }
+        
+        public async Task<bool> SaveAll()
+        {
+            return await _context.SaveChangesAsync() > 0;
         }
     }
 }
