@@ -18,9 +18,11 @@ import { InfoComponent } from './Info/Info.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { NewPortfolioComponent } from './newPortfolio/newPortfolio.component';
 import { PortfolioCardComponent } from './portfolioCard/portfolioCard.component';
+import { FilesComponent } from './files/files.component';
+import { ResetPasswordComponent } from './resetPassword/resetPassword.component';
 
 @NgModule({
-  declarations: [																	
+  declarations: [																			
     AppComponent,
     HeaderComponent,
     RegisterComponent,
@@ -33,7 +35,9 @@ import { PortfolioCardComponent } from './portfolioCard/portfolioCard.component'
       InfoComponent,
       PortfolioComponent,
       NewPortfolioComponent,
-      PortfolioCardComponent
+      PortfolioCardComponent,
+      FilesComponent,
+      ResetPasswordComponent
    ],
   imports: [
     BrowserModule,

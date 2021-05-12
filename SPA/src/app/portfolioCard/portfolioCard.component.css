@@ -1,6 +1,6 @@
 #tt {
     position: absolute; 
-    top: 320px; 
+    top: 350px; 
     left: 470px
 }
 
@@ -8,4 +8,7 @@
     position: absolute; 
     top: 80px; 
     left: 900px
+}
+button {
+    margin-top: -50px;
 }

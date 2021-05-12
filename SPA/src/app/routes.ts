@@ -1,6 +1,7 @@
 import {Routes} from '@angular/router';
 import { AchievmentsComponent } from './achievments/achievments.component';
 import { EducationComponent } from './education/education.component';
+import { FilesComponent } from './files/files.component';
 import { HomeComponent } from './home/home.component';
 import { InfoComponent } from './Info/Info.component';
 import { NewAchComponent } from './newAch/newAch.component';
@@ -8,6 +9,7 @@ import { NewPortfolioComponent } from './newPortfolio/newPortfolio.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { PortfolioCardComponent } from './portfolioCard/portfolioCard.component';
 import { RegisterComponent } from './register/register.component';
+import { ResetPasswordComponent } from './resetPassword/resetPassword.component';
 import { SportComponent } from './sport/sport.component';
 import { VolunteeringComponent } from './volunteering/volunteering.component';
 import { WorkComponent } from './work/work.component';
@@ -29,7 +31,9 @@ export const appRoutes: Routes = [
             { path: 'Info', component: InfoComponent },
             { path: 'Portfolio', component: PortfolioComponent },
             { path: 'NewPortfolio', component: NewPortfolioComponent },
-            { path: 'PortfolioCard', component: PortfolioCardComponent }
+            { path: 'Duveshka/Portfolio-12653', component: PortfolioCardComponent },
+            { path: 'Files', component: FilesComponent },
+            { path: 'ResetP', component: ResetPasswordComponent }
            ]
          },
        ];

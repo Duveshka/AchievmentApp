@@ -13,7 +13,7 @@
     <input id ="form1" type="datetime-local" class="form-control" name="dateTime"
       placeholder="Дата" required>
   </div>
-  <div class="form-group" id ="form2">
+  <div class="form-group" id ="form1">
     <select name="select" size="3" class="form-control">
       <option selected value="s1">Спорт</option>
       <option value="s2">Волонтерство</option>
@@ -22,10 +22,13 @@
     </select>
   </div>
   <div class="form-group">
-    <input id ="form1" type="text-area" class="form-control" required name="description"
-      placeholder="Описание" required>
+    <textarea id ="form1"  class="form-control" required name="description"
+      placeholder="Описание" required></textarea>
   </div>
-
+  <div class="form-group" id ="form1">
+  <p><input type="file" name="photo" required multiple
+    title="Загрузите один или несколько документов"></p>
+  </div>
   <div class="form-group text-center">
     <button class="btn btn-lg btn-warning mr-2" type="submit">Добавить</button>
     <button class="btn btn-lg btn-warning" type="button">Отмена</button>
