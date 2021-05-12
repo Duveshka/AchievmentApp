@@ -1,0 +1,34 @@
+<br><br><br><br><br>
+
+<form center>
+  <h2 class="top text-center text-primary">Добавление нового достижения</h2>
+  <hr id ="form1">
+
+  <div class="form-group">
+    <input id ="form1" type="name" class="form-control" required name="name" 
+     placeholder="Название" required>
+  </div>
+
+  <div class="form-group">
+    <input id ="form1" type="datetime-local" class="form-control" name="dateTime"
+      placeholder="Дата" required>
+  </div>
+  <div class="form-group" id ="form2">
+    <select name="select" size="3" class="form-control">
+      <option selected value="s1">Спорт</option>
+      <option value="s2">Волонтерство</option>
+      <option value="s3">Искусство</option>
+      <option value="s4">Другое</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <input id ="form1" type="text-area" class="form-control" required name="description"
+      placeholder="Описание" required>
+  </div>
+
+  <div class="form-group text-center">
+    <button class="btn btn-lg btn-warning mr-2" type="submit">Добавить</button>
+    <button class="btn btn-lg btn-warning" type="button">Отмена</button>
+  </div>
+
+</form>
